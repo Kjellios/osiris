@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.yourcompany</groupId>
+    <artifactId>osiris-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>osiris-bitmonlab-core</module>
+        <module>osiris-map-commons</module>
+        <module>osiris-map-import</module>
+        <module>osiris-map-services-core</module>
+        <module>osiris-map</module>
+        <module>osiris-encrypt-password</module>
+    </modules>
+    
+    <!-- Add common configurations for all child pom files -->
+</project>
