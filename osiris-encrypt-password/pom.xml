@@ -1,25 +1,31 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.bitmonlab.osiris.enrypt</groupId>
-  <artifactId>osiris-encrypt-password</artifactId>
-  <version>1.2.0</version>
-  <packaging>jar</packaging>
+	<groupId>com.bitmonlab.osiris.enrypt</groupId>
+	<artifactId>osiris-encrypt-password</artifactId>
+	<version>1.2.0</version>
+	<packaging>jar</packaging>
 
-  <name>osiris-encrypt-password</name>
-  <url>http://maven.apache.org</url>
+	<name>osiris-encrypt-password</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>	
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <main.class>com.bitmonlab.osiris.encrypt.EncryptOsirisPassword</main.class>
-    <jar.name>osiris-encrypt-password</jar.name>   		
-	<compiler.version>1.8</compiler.version>
-  </properties>
-  
-   <build>
-		<finalName>${jar.name}</finalName>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<main.class>com.bitmonlab.osiris.encrypt.EncryptOsirisPassword</main.class>
+		<jar.name>osiris-encrypt-password</jar.name>
+		<compiler.version>1.8</compiler.version>
+	</properties>
+
+	<build>
+		<finalName>osiris-encrypt-password</finalName>
 		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.8.1</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -59,19 +65,19 @@
 					<configuration>
 						<argLine>-XX:-UseSplitVerifier -Xms256m -Xmx1G -XX:PermSize=300m</argLine>
 						<systemPropertyVariables>
-            					<java.util.logging.config.class>
-                						com.bitmonlab.osiris.encrypt.LoggingConfig
-            						</java.util.logging.config.class>            
-        				</systemPropertyVariables>
+							<java.util.logging.config.class>
+								com.bitmonlab.osiris.encrypt.LoggingConfig
+							</java.util.logging.config.class>
+						</systemPropertyVariables>
 					</configuration>
 				</plugin>
 			</plugins>
 
 		</pluginManagement>
 	</build>
-	
-		<profiles>
-		
+
+	<profiles>
+
 		<profile>
 			<id>FatJar</id>
 			<build>
@@ -114,7 +120,7 @@
 										<transformer
 											implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 											<manifestEntries>
-												<Main-Class>${main.class}</Main-Class>												
+												<Main-Class>${main.class}</Main-Class>
 											</manifestEntries>
 										</transformer>
 										<transformer
@@ -134,41 +140,39 @@
 			</build>
 		</profile>
 	</profiles>
-	
-	
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    
- 	<dependency>
-	    <groupId>commons-codec</groupId>
-	    <artifactId>commons-codec</artifactId>
-	    <version>1.9</version>
-	</dependency>
-   
-  </dependencies>
-  
-      <distributionManagement>
 
-    	<snapshotRepository>
-        	<id>ocean-artifactory</id>
-            <name>ocean-artifactory-snapshots</name>           
-            <url>http://54.247.180.103/artifactory/aide-snapshot-local</url>         
-        </snapshotRepository>
-        
-    	 <repository>
-        	<id>ocean-artifactory</id>
-            <name>ocean-artifactory-release</name>
-            <url>http://54.247.180.103/artifactory/aide-release-local</url>
-        </repository>       
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
 
-    </distributionManagement>
-  
-  
-  
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.16.1</version>
+		</dependency>
+
+	</dependencies>
+
+	<distributionManagement>
+
+		<snapshotRepository>
+			<id>ocean-artifactory</id>
+			<name>ocean-artifactory-snapshots</name>
+			<url>http://54.247.180.103/artifactory/aide-snapshot-local</url>
+		</snapshotRepository>
+
+		<repository>
+			<id>ocean-artifactory</id>
+			<name>ocean-artifactory-release</name>
+			<url>http://54.247.180.103/artifactory/aide-release-local</url>
+		</repository>
+
+	</distributionManagement>
+
+
 </project>

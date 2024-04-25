@@ -24,6 +24,11 @@
 		<finalName>osiris-bitmonlab-core</finalName>
 		<plugins>
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.8.1</version>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.3.2</version>
@@ -142,7 +147,7 @@
 			<artifactId>httpclient</artifactId>
 			<version>[4.3.6,)</version>
 		</dependency>
-<!-- Removed duplicate junit.junit dependency -->
+		<!-- Removed duplicate junit.junit dependency -->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-core</artifactId>
